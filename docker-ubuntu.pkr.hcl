@@ -17,11 +17,17 @@ source "docker" "ubuntu-focal" {
   commit = true
 }
 
+source "docker" "ubuntu-latest" {
+    image = var.ubuntu_latest_image
+    commit = true
+}
+
 build {
   name = "learn-packer"
   sources = [
     "source.docker.ubuntu",
     "source.docker.ubuntu-focal",
+    "source.docker.ubuntu-latest",
   ]
 
   provisioner "shell" {
@@ -38,16 +44,12 @@ build {
     ]
   }
 
-  post-processor "docker-tag" {
-    repository = "learn-packer"
-    tags       = var.ubuntu_jammy_tags
-    only       = ["docker.ubuntu"]
-  }
-
-  post-processor "docker-tag" {
-    repository = "learn-packer"
-    tags       = var.ubuntu_focal_tags
-    only       = ["docker.ubuntu-focal"]
+  post-processor "manifest" {
+    output = var.manifest_output
+    strip_path = true
+    custom_data = {
+      my_custom_data = var.custom_data["my_custom_data"]
+    }
   }
 
 }
