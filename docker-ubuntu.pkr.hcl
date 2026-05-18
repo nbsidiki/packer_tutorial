@@ -7,16 +7,27 @@ packer {
   }
 }
 
+variable "docker_image" {
+  type    = string
+  default = "ubuntu:jammy"
+}
+
 source "docker" "ubuntu" {
-  image  = "ubuntu:jammy"
+  image  = var.docker_image
   commit = true
 }
+
 
 build {
   name = "learn-packer"
   sources = [
     "source.docker.ubuntu"
   ]
+
+  provisioner "shell" {
+   inline = ["echo Running ${var.docker_image} Docker image."]
+  }
+
   provisioner "shell" {
     environment_vars = [
       "FOO=hello world",
@@ -25,9 +36,6 @@ build {
       "echo Adding file to Docker Container",
       "echo \"FOO is $FOO\" > example.txt",
     ]
-  }
-  provisioner "shell" {
-    inline = ["echo This provisioner runs last"]
   }
 }
 
