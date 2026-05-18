@@ -42,5 +42,18 @@ build {
       "echo \"FOO is $FOO\" > example.txt",
     ]
   }
+
+  post-processor "docker-tag" {
+    repository = "learn-packer"
+    tags       = ["ubuntu-jammy", "packer-rocks"]
+    only       = ["docker.ubuntu"]
+  }
+
+  post-processor "docker-tag" {
+    repository = "learn-packer"
+    tags       = ["ubuntu-focal", "packer-rocks"]
+    only       = ["docker.ubuntu-focal"]
+  }
+
 }
 
