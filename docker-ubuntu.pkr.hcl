@@ -7,18 +7,13 @@ packer {
   }
 }
 
-variable "docker_image" {
-  type    = string
-  default = "ubuntu:jammy"
-}
-
 source "docker" "ubuntu" {
   image  = var.docker_image
   commit = true
 }
 
 source "docker" "ubuntu-focal" {
-  image  = "ubuntu:focal"
+  image  = var.ubuntu_focal_image
   commit = true
 }
 
@@ -39,19 +34,19 @@ build {
     ]
     inline = [
       "echo Adding file to Docker Container",
-      "echo \"FOO is $FOO\" > example.txt",
+      "echo \"${var.example_txt_content}\" > example.txt",
     ]
   }
 
   post-processor "docker-tag" {
     repository = "learn-packer"
-    tags       = ["ubuntu-jammy", "packer-rocks"]
+    tags       = var.ubuntu_jammy_tags
     only       = ["docker.ubuntu"]
   }
 
   post-processor "docker-tag" {
     repository = "learn-packer"
-    tags       = ["ubuntu-focal", "packer-rocks"]
+    tags       = var.ubuntu_focal_tags
     only       = ["docker.ubuntu-focal"]
   }
 
