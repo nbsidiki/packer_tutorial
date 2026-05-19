@@ -44,6 +44,18 @@ build {
     ]
   }
 
+  provisioner "file" {
+    source      = "welcome.txt"
+    destination = "/home/welcome.txt"
+  }
+
+  provisioner "shell" {
+    inline = [
+      "echo Verifying /home content",
+      "ls -la /home",
+    ]
+  }
+
   post-processor "manifest" {
     output = var.manifest_output
     strip_path = true
