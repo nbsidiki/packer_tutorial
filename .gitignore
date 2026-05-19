@@ -1,0 +1,3 @@
+# Local secret var file (do NOT commit)
+secret.auto.pkrvars.hcl
+.env

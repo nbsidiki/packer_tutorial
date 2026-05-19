@@ -1,18 +1,18 @@
 packer {
   required_plugins {
-    docker = {
+    docker3 = {
       version = ">= 1.0.8"
       source  = "github.com/hashicorp/docker"
     }
   }
 }
 
-source "docker" "ubuntu" {
+source "docker3" "ubuntu" {
   image  = "ubuntu:22.04"
   commit = true
 }
 
-source "docker" "alpine" {
+source "docker3" "alpine" {
   image  = "alpine:3.19"
   commit = true
 }
@@ -20,12 +20,12 @@ source "docker" "alpine" {
 build {
   name = "multi-os"
   sources = [
-    "source.docker.ubuntu",
-    "source.docker.alpine",
+    "source.docker3.ubuntu",
+    "source.docker3.alpine",
   ]
 
   provisioner "shell" {
-    only = ["docker.ubuntu"]
+    only = ["docker3.ubuntu"]
     inline = [
       "set -eux",
       "apt-get update",
@@ -34,7 +34,7 @@ build {
   }
 
   provisioner "shell" {
-    only = ["docker.alpine"]
+    only = ["docker3.alpine"]
     inline = [
       "set -eux",
       "apk update",
@@ -60,12 +60,12 @@ build {
   post-processor "docker-tag" {
     repository = "multi-os-ubuntu"
     tags       = ["latest"]
-    only       = ["docker.ubuntu"]
+    only       = ["docker3.ubuntu"]
   }
 
   post-processor "docker-tag" {
     repository = "multi-os-alpine"
     tags       = ["latest"]
-    only       = ["docker.alpine"]
+    only       = ["docker3.alpine"]
   }
 }

@@ -39,3 +39,8 @@ variable "manifest_output" {
   type    = string
   default = "manifest.json"
 }
+
+variable "app_passphrase" {
+  type    = string
+  default = "mysecretphrase"
+}

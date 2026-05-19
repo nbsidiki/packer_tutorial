@@ -70,7 +70,106 @@
       "custom_data": {
         "my_custom_data": "exo_2"
       }
+    },
+    {
+      "name": "ubuntu-focal",
+      "builder_type": "docker",
+      "build_time": 1779200928,
+      "files": null,
+      "artifact_id": "sha256:b5a5af2f540fe2e97663e4cbcee5dde2a1a1e00b3942c1e6758772b56bc67f1d",
+      "packer_run_uuid": "80a39ff0-3a69-7058-e454-36856cdff773",
+      "custom_data": {
+        "my_custom_data": "exo_2"
+      }
+    },
+    {
+      "name": "ubuntu",
+      "builder_type": "docker",
+      "build_time": 1779200928,
+      "files": null,
+      "artifact_id": "sha256:e3a81daa20ec4e6bc2ea4d361edd515b4f8af44239358e4d4cb5cebc07cd2f8f",
+      "packer_run_uuid": "80a39ff0-3a69-7058-e454-36856cdff773",
+      "custom_data": {
+        "my_custom_data": "exo_2"
+      }
+    },
+    {
+      "name": "ubuntu-latest",
+      "builder_type": "docker",
+      "build_time": 1779200929,
+      "files": null,
+      "artifact_id": "sha256:65da552601eb603559b437bf8fba4c2c53865ef87725804ac3a4cb050f351e55",
+      "packer_run_uuid": "80a39ff0-3a69-7058-e454-36856cdff773",
+      "custom_data": {
+        "my_custom_data": "exo_2"
+      }
+    },
+    {
+      "name": "ubuntu",
+      "builder_type": "docker",
+      "build_time": 1779201812,
+      "files": null,
+      "artifact_id": "sha256:b6e3c41c4c813fcf303e7f9365689a5ecb17b0a1311b9fff2f31c6514bb45387",
+      "packer_run_uuid": "b54175b9-5f08-3175-9041-65256bf2fe9b",
+      "custom_data": {
+        "my_custom_data": "exo_2"
+      }
+    },
+    {
+      "name": "ubuntu-focal",
+      "builder_type": "docker",
+      "build_time": 1779201812,
+      "files": null,
+      "artifact_id": "sha256:9a75650409c3cb8c8a47c1d0d2dae9e7a42a084209f56d3d7eb523950d63ed9f",
+      "packer_run_uuid": "b54175b9-5f08-3175-9041-65256bf2fe9b",
+      "custom_data": {
+        "my_custom_data": "exo_2"
+      }
+    },
+    {
+      "name": "ubuntu-latest",
+      "builder_type": "docker",
+      "build_time": 1779201813,
+      "files": null,
+      "artifact_id": "sha256:0418ae46b4d6c674a799eb2c39dd9246644a2698c4c7d85b1de33a2f0f91bf70",
+      "packer_run_uuid": "b54175b9-5f08-3175-9041-65256bf2fe9b",
+      "custom_data": {
+        "my_custom_data": "exo_2"
+      }
+    },
+    {
+      "name": "ubuntu-focal",
+      "builder_type": "docker",
+      "build_time": 1779201896,
+      "files": null,
+      "artifact_id": "sha256:d7f2178cafc372d386a2669f472b258bfa14fb9ca310a1330c85b72aa76ff92d",
+      "packer_run_uuid": "a0d2c026-3792-b922-41e4-a3056871d3c7",
+      "custom_data": {
+        "my_custom_data": "exo_2"
+      }
+    },
+    {
+      "name": "ubuntu",
+      "builder_type": "docker",
+      "build_time": 1779201896,
+      "files": null,
+      "artifact_id": "sha256:5e4347802ccaf6070aa3320f42d5897ed70fda7196266ea6bb905027d1e1d9d0",
+      "packer_run_uuid": "a0d2c026-3792-b922-41e4-a3056871d3c7",
+      "custom_data": {
+        "my_custom_data": "exo_2"
+      }
+    },
+    {
+      "name": "ubuntu-latest",
+      "builder_type": "docker",
+      "build_time": 1779201896,
+      "files": null,
+      "artifact_id": "sha256:58c0eb0a01678804188fcbbf971263a014c859ec425d583d04488b15efffdffe",
+      "packer_run_uuid": "a0d2c026-3792-b922-41e4-a3056871d3c7",
+      "custom_data": {
+        "my_custom_data": "exo_2"
+      }
     }
   ],
-  "last_run_uuid": "cb86bf0c-ace3-6cc6-df3a-2a9c7a22ab6f"
+  "last_run_uuid": "a0d2c026-3792-b922-41e4-a3056871d3c7"
 }
